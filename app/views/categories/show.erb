@@ -1,0 +1,8 @@
+<div class="container">
+<h2><%= @category.title %></h2>
+<ul>
+<% @businesses.each do |business| %>
+  <li><a href="/businesses/<%=business.id%>"><%= business.name %></a></li>
+<% end %>
+</ul>
+</div>

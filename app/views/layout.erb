@@ -20,17 +20,38 @@
   <title></title>
 </head>
 <body>
-<div id="content">
-  <header>
-    <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
-    <div id="login-toolbar">
-      <% if current_user %>
-        <a href="/logout">Logout</a>
+  <div class="header">
+    <h1>This Is My Header</h1>
+    <div id="nav-bar">
+
+      <% if @user %>
+
+        <h3>Hi <%= @user.name %>!</h3>
+
+        <form class="form" action="/sessions/log_out" method="get">
+          <button type="submit" name="Log Out" value="">Log Out</button>
+        </form>
+
+        <form class="form" action="/users/<%=@user.id%>" method="get">
+          <button type="submit" name="Profile" value="">Profile</button>
+        </form>
+
       <% else %>
-        <a href="/login">Login</a>
+
+        <form class="form" action="/sessions/new" method="get">
+          <button type="submit" name="Log In!" value="">Log In!</button>
+        </form>
+
+        <form class="form" action="/users/new" method="get">
+          <button type="submit" name="register" value="">Sign Up!</button>
+        </form>
+
       <% end %>
-  </header>
+
+      <a class="home" action="/" href="/">Home</a>
+
+    </div>
+  </div>
   <%= yield %>
-</div>
 </body>
 </html>

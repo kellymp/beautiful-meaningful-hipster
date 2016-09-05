@@ -1,0 +1,15 @@
+<div class="container">
+<h3><%= @business.name %></hr>
+  <h4>Reviews:</h4>
+  <ul>
+    <% @reviews.each do |review| %>
+    <li><%=review.user.name%></li>
+    <li class="review"><%= review.review %></li>
+    <li class="review"><%= review.rating %> Stars - <%= review.created_at.to_date %></li>
+    <% end %>
+  </ul>
+
+  <form class="form" action="/businesses/<%=@business.id%>/reviews/new" method="get">
+    <button type="submit" name="Review" value="">Review</button>
+  </form>
+</div>

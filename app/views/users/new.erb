@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome!</h1>
+  <p>Please enter the following information to register:</p>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p class="error"><%= error %></p>
+    <% end %>
+  <% end %>
+  <form action="/users" method="post">
+    <label for="name">Enter Full Name:</label>
+    <input id='name' placeholder="name" type="text" name="name" value=""></input>
+    <label for="email">Enter E-Mail:</label>
+    <input id='email' placeholder="example@example.com" type="text" name="email" value=""></input>
+    <label for="password">Enter Password:</label>
+    <input id='password' placeholder="password!" type="password" name="password" value=""></input>
+    <label for="password2">Confirm Password:</label>
+    <input id='password2' placeholder="password!" type="password" name="password2" value=""></input>
+    <button type="submit" name="submit" value="">Submit!</button>
+  </form>
+</div>

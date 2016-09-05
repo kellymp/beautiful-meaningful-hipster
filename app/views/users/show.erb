@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Your User Profile</h2>
+  <h3>Your Reviews:</h3>
+  <ul>
+  <% @reviews.each do |review| %>
+    <li><a href="/businesses/<%=review.business.id%>"><%= review.business.name %></a></li>
+    <li class='review'><%= review.review %></li>
+    <li class="review"><%= review.rating %> Stars - <%= review.created_at.to_date %></li>
+  <% end %>
+  </ul>
+</div>

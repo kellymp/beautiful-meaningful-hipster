@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Welcome!</h1>
+  <p>Please enter the following information to login:</p>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p class="error"><%= error %></p>
+    <% end %>
+  <% end %>
+  <form action="/sessions" method="post">
+    <label for="email">Enter E-Mail:</label>
+    <input id='email' placeholder="example@example.com" type="text" name="email"></input>
+    <label for="password">Enter Password:</label>
+    <input id='password' placeholder="password" type="password" name="password"></input>
+    <button type="submit" name="submit">Submit!</button>
+  </form>
+</div>
