@@ -24,15 +24,16 @@
     <h1>This Is My Header</h1>
     <div id="nav-bar">
 
-      <% if @user %>
+      <% if session[:user_id] %>
 
-        <h3>Hi <%= @user.name %>!</h3>
+        <h3>Hi <%= current_user.name %>!</h3>
 
-        <form class="form" action="/sessions/log_out" method="get">
+        <form class="form" action="/sessions" method="post">
+          <input type="hidden" name="_method" value="DELETE"/>
           <button type="submit" name="Log Out" value="">Log Out</button>
         </form>
 
-        <form class="form" action="/users/<%=@user.id%>" method="get">
+        <form class="form" action="/users/<%=current_user.id%>" method="get">
           <button type="submit" name="Profile" value="">Profile</button>
         </form>
 

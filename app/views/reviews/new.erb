@@ -1,12 +1,9 @@
-<div cleass="container">
-  <% if @errors %>
-    <% @errors.each do |error| %>
-      <p class="error"><%= error %></p>
-    <% end %>
-  <% end %>
+<%= erb :'categories/_categories_nav' %>
+<div class="container">
+  <%= erb :"_errors", locals: { errors: @errors } %>
   <form class="form" action="/businesses/<%=@business.id%>/reviews/new" method="post">
     <label for="review-text">Review:</label>
-    <textarea rows="4" cols="50" id='review-text' type="text" name="review_text" value=""></textarea>
+    <textarea rows="4" cols="40" id='review-text' type="text" name="review_text" value=""></textarea>
     <label for="rating">Rating:</label>
     <input id='rating' placeholder="0-5 only" type="text" name="rating" value=""></input>
     <button type="submit" name="Submit Review" value="">Submit Review</button>

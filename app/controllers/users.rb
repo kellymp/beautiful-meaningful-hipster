@@ -4,7 +4,7 @@ end
 
 post '/users' do
   new_account = User.new(
-    name: params[:name],
+    name: params[:username],
     email: params[:email],
     password: params[:password]
     )
@@ -27,7 +27,7 @@ post '/users' do
 end
 
 get '/users/:id' do
-  @user = User.find(session[:user_id])
+  @user = current_user
   if @user.reviews
     @reviews = @user.reviews
   end

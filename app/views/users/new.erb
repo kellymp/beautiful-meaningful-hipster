@@ -1,14 +1,10 @@
 <div class="container">
   <h1>Welcome!</h1>
   <p>Please enter the following information to register:</p>
-  <% if @errors %>
-    <% @errors.each do |error| %>
-      <p class="error"><%= error %></p>
-    <% end %>
-  <% end %>
+  <%= erb :"_errors", locals: { errors: @errors } %>
   <form action="/users" method="post">
-    <label for="name">Enter Full Name:</label>
-    <input id='name' placeholder="name" type="text" name="name" value=""></input>
+    <label for="username">Enter Full Name:</label>
+    <input id='username' placeholder="username" type="text" name="username" value=""></input>
     <label for="email">Enter E-Mail:</label>
     <input id='email' placeholder="example@example.com" type="text" name="email" value=""></input>
     <label for="password">Enter Password:</label>
