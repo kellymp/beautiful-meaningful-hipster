@@ -27,10 +27,15 @@
       <% if current_user %>
         <a href="/logout">Logout</a>
       <% else %>
+        <a href="/trivias">Registration</a>
         <a href="/login">Login</a>
       <% end %>
   </header>
   <%= yield %>
+<form action="demo_form.asp">
+  <input type="checkbox" class='box'> I am not a robot </input> <br>
+</form>
+
 </div>
 </body>
 </html>

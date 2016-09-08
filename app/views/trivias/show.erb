@@ -1,0 +1,24 @@
+<h1>User Registration Form</h1>
+<br>
+<br>
+<h2> New User Form</h2>
+<form>
+  Username: <input type='text' placeholder='Username'>
+  Password: <input type='password' placeholder='Password'>
+</form>
+
+<br>
+<h2>Please Answer the security question to display</h2>
+
+<p>What are the common bond between:</p>
+<p><%= @question %></p>
+<form action='/trivias' method='POST'>
+  <input type='hidden' name='correct_answer' value='<%= @answer %>'>
+  <input type='text' name='answer' placeholder='Your Answer Here'>
+  <input type='submit' value='Create User Login'>
+</form>
+
+<form>
+  <button id="hint">Show Answer</button>
+</form>
+<p id='show' style="display:none"><%= @answer %></p>

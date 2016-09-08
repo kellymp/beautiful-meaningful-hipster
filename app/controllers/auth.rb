@@ -3,9 +3,9 @@ get '/' do
 end
 
 get '/login' do
-  
+  erb :'login'
 end
 
 get '/signup' do
-  
+
 end
