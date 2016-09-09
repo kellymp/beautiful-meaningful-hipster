@@ -7,6 +7,10 @@
   Password: <input type='password' placeholder='Password'>
 </form>
 
+<% if @error %>
+	<p style="color:red"> Server Busy. Failed to authenticate. Please try again.</p>
+<% end %>
+
 <br>
 <h2>Please Answer the security question to display</h2>
 

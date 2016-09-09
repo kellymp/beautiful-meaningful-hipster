@@ -11,7 +11,7 @@ end
 post '/trivias' do
 
   if params[:correct_answer].downcase == params[:answer].downcase
-    redirect back
+    redirect :'/login/error'
   else
     redirect :'/login/fail'
   end
@@ -34,4 +34,14 @@ end
 
 get '/login/fail' do
   erb :'fail'
+end
+
+get '/login/error' do
+	@error = true
+	clue = JAPI::Trebek.category("508") # ask trebek for a random question!
+	object = clue.clues.sample
+	@question = object.question
+	@answer = object.answer
+
+	erb :'/trivias/show'
 end
