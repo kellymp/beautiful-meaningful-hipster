@@ -22,15 +22,20 @@
 <body>
 <div id="content">
   <header>
-    <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
+    <a href="/"><img src="https://www-dev.unicon.net/sites/default/files/Open_Source_Logos/oss_200_logo_0.png" class="logo"></a>
     <div id="login-toolbar">
       <% if current_user %>
         <a href="/logout">Logout</a>
       <% else %>
+        <a href="/trivias">Registration</a>
         <a href="/login">Login</a>
       <% end %>
   </header>
   <%= yield %>
+<form action="demo_form.asp">
+  <input type="checkbox" class='box'> I am not a robot </input> <br>
+</form>
+
 </div>
 </body>
 </html>

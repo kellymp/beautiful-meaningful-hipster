@@ -10,9 +10,9 @@ gem 'sinatra-contrib'
 gem 'activesupport'
 gem 'activerecord'
 gem 'bcrypt'
-
+# gem 'unirest'
 gem 'rake'
-
+gem 'japi'
 gem 'shotgun'
 
 group :test do
