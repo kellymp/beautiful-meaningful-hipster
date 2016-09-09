@@ -13,7 +13,7 @@ post '/trivias' do
   if params[:correct_answer].downcase == params[:answer].downcase
     redirect back
   else
-    redirect :'/'
+    redirect :'/login/fail'
   end
 end
 
@@ -31,3 +31,7 @@ end
 #   p '^^^^^^^^^^^^^^^^^^^^^^'
 
 # end
+
+get '/login/fail' do
+  erb :'fail'
+end
